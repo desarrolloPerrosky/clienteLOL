@@ -1,0 +1,13 @@
+<StackLayout height="auto" >
+	
+	<Image src="res://league_of_legends" 
+		stretch="fill" width="60%" height="100" horizontalAlignment="center"></Image>
+	
+	<TextField #busquedaTextField
+		hint="Nombre campeón" keyboardType="email" [(ngModel)]="campeon"
+		autocorrect="false" autocapitalizationType="none"></TextField>
+	
+	<Button text="Buscar" class="submit-button" (tap)="busqueda()"></Button>
+	<Button text="Largo" class="submit-button" (tap)="test()" 
+		*ngIf="false" visibility="{{alto > 800 ? 'visible' : 'collapse'}}" ></Button>
+</StackLayout>

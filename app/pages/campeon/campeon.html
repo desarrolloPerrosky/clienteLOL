@@ -1,0 +1,56 @@
+<ActionBar [title]="campeonBuscado"></ActionBar>
+<ScrollView sdkExampleTitle sdkToggleNavButton>
+
+    <FlexboxLayout #content style.zIndex="2" alignSelf="flex-start" flexDirection="column">
+
+        <Label flexGrow="1" [text]="miCampeon ? miCampeon.title : ''" 
+            class="h2 p-l-15 p-r-15 p-t-15" textWrap="true"></Label>
+
+        <StackLayout flexGrow="1" orientation="vertical" class="p-15" width="100%" heigth="auto">
+
+            <StackLayout flexGrow="1" orientation="horizontal" width="100%" heigth="auto">
+                <Label text="Dificultad" width="20%" height="15" class="h3"></Label>
+                <Progress [value]="miCampeon && miCampeon.info ? miCampeon.info.difficulty : 0"
+                    width="60%" maxValue="10"></Progress>
+                <Label [text]="' '+ (miCampeon && miCampeon.info ? miCampeon.info.difficulty : '0')+'/10'"
+                    width="10%" height="15"></Label>
+            </StackLayout>
+
+            <StackLayout flexGrow="1" orientation="horizontal" width="100%" heigth="auto">
+                <Label text="Ataque" width="20%" height="15" class="h3"></Label>
+                <Progress [value]="miCampeon && miCampeon.info ? miCampeon.info.attack : 0"
+                    width="60%" maxValue="10"></Progress>
+                <Label [text]="' '+(miCampeon && miCampeon.info ? miCampeon.info.attack : '0')+'/10'"
+                    width="10%" height="15"></Label>
+            </StackLayout>
+
+            <StackLayout flexGrow="1" orientation="horizontal" width="100%" heigth="auto">
+                <Label text="Defensa" width="20%" height="15" class="h3"></Label>
+                <Progress [value]="miCampeon && miCampeon.info ? miCampeon.info.defense : 0"
+                    width="60%" maxValue="10"></Progress>
+                <Label [text]="' '+(miCampeon && miCampeon.info ? miCampeon.info.defense : '0')+'/10'"
+                    width="10%" height="15"></Label>
+            </StackLayout>
+
+            <StackLayout flexGrow="1" orientation="horizontal" width="100%" heigth="auto">
+                <Label text="Magia" width="20%" height="15" class="h3"></Label>
+                <Progress [value]="miCampeon && miCampeon.info ? miCampeon.info.magic : 0"
+                    width="60%" maxValue="10"></Progress>
+                <Label [text]="' '+(miCampeon && miCampeon.info ? miCampeon.info.magic : '0')+'/10'"
+                    width="10%" height="15"></Label>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout flexGrow="1" orientation="vertical" class="p-15" width="100%" heigth="auto" *ngIf="miCampeon">
+            <Label  *ngFor="let tag of miCampeon.tags"
+                [text]="tags(tag)" width="100%" height="15" class="h3" ></Label>
+        </StackLayout>
+
+        <Image #img style.zIndex="1" flexGrow="1" src="res://league_of_legends" stretch="fill"></Image>
+
+        <StackLayout flexGrow="1" orientation="horizontal" class="p-15" width="100%" heigth="auto">
+            <HtmlView [html]="miCampeon ? (historia ? miCampeon.blurb : miCampeon.lore ) : ''" (tap)="historia=!historia"></HtmlView>
+        </StackLayout>
+    </FlexboxLayout>
+
+</ScrollView>

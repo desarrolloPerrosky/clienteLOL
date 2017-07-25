@@ -1,0 +1,21 @@
+<ActionBar [title]="busqueda">
+	<ActionItem text="Menu" (tap)="opciones()" android.systemIcon="ic_menu_holo_dark" ios.systemIcon="9" ios.position="right"></ActionItem>
+</ActionBar>
+
+<GridLayout rows="auto, *">
+	<ListView #milistado [items]="listadoCampeones" row="1" 
+		class="small-spacing" itemTemplateSelector="$index % 2 === 0 ? 'even' : 'odd'"
+		[class.visible]="!isLoading" (itemTap)="onItemTap($event)">
+		<ng-template let-item="item" >
+			<GridLayout columns="auto, *, auto" rows="auto, 25" style.verticalAlignment="top" style.backgroundColor="lightgray">
+				<Image [src]="item.icono" rowSpan="2" width="72" height="72" margin="3" style.verticalAlignment="top"></Image>
+				
+				<Label [text]="item.name" textWrap="true" col="1" colSpan="2" minHeight="50" style.fontSize="20" margin="3"></Label>
+				<Label [text]="item.title" col="1" row="1" style.fontSize="14" style.horizontalAlignment="left" style.verticalAlignment="bottom" margin="3"></Label>
+			</GridLayout>
+		</ng-template>
+	</ListView>
+	
+	<ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" 
+						row="1" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
+</GridLayout>

@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var info_imagen_1 = require("./info-imagen");
+var Pasiva = (function () {
+    function Pasiva(image, sanitizedDescription, name, description) {
+        this.image = image;
+        this.sanitizedDescription = sanitizedDescription;
+        this.name = name;
+        this.description = description;
+    }
+    Pasiva.NEW = function (dto) {
+        return new Pasiva(info_imagen_1.InfoImagen.NEW(dto.image), dto.sanitizedDescription, dto.name, dto.description);
+    };
+    return Pasiva;
+}());
+exports.Pasiva = Pasiva;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFzaXZhLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsicGFzaXZhLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQTJDO0FBRTNDO0lBQ0ksZ0JBQ1csS0FBa0IsRUFDbEIsb0JBQTRCLEVBQ2xDLElBQVksRUFDTixXQUFtQjtRQUhuQixVQUFLLEdBQUwsS0FBSyxDQUFhO1FBQ2xCLHlCQUFvQixHQUFwQixvQkFBb0IsQ0FBUTtRQUNsQyxTQUFJLEdBQUosSUFBSSxDQUFRO1FBQ04sZ0JBQVcsR0FBWCxXQUFXLENBQVE7SUFFOUIsQ0FBQztJQUVNLFVBQUcsR0FBVixVQUFXLEdBQU87UUFDZCxNQUFNLENBQUMsSUFBSSxNQUFNLENBQ2Isd0JBQVUsQ0FBQyxHQUFHLENBQUUsR0FBRyxDQUFDLEtBQUssQ0FBQyxFQUMxQixHQUFHLENBQUMsb0JBQW9CLEVBQ3hCLEdBQUcsQ0FBQyxJQUFJLEVBQ1IsR0FBRyxDQUFDLFdBQVcsQ0FDbEIsQ0FBQztJQUNOLENBQUM7SUFDTCxhQUFDO0FBQUQsQ0FBQyxBQWpCRCxJQWlCQztBQWpCWSx3QkFBTSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEluZm9JbWFnZW4gfVx0ZnJvbSBcIi4vaW5mby1pbWFnZW5cIjtcclxuXHJcbmV4cG9ydCBjbGFzcyBQYXNpdmEge1xyXG4gICAgY29uc3RydWN0b3IoXHJcbiAgICAgICAgcHVibGljIGltYWdlIDogSW5mb0ltYWdlbixcclxuICAgICAgICBwdWJsaWMgc2FuaXRpemVkRGVzY3JpcHRpb24gOnN0cmluZyxcclxuXHRcdHB1YmxpYyBuYW1lOiBzdHJpbmcsXHJcbiAgICAgICAgcHVibGljIGRlc2NyaXB0aW9uOiBzdHJpbmdcclxuICAgICl7XHJcbiAgICB9XHJcbiAgICBcclxuICAgIHN0YXRpYyBORVcoZHRvOmFueSk6UGFzaXZhe1xyXG4gICAgICAgIHJldHVybiBuZXcgUGFzaXZhKFxyXG4gICAgICAgICAgICBJbmZvSW1hZ2VuLk5FVyggZHRvLmltYWdlKSxcclxuICAgICAgICAgICAgZHRvLnNhbml0aXplZERlc2NyaXB0aW9uLFxyXG4gICAgICAgICAgICBkdG8ubmFtZSxcclxuICAgICAgICAgICAgZHRvLmRlc2NyaXB0aW9uXHJcbiAgICAgICAgKTtcclxuICAgIH1cclxufSJdfQ==
